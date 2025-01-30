@@ -1,115 +1,130 @@
 # HNG12 API
 
-This is a public API that returns the following information:
-
-1. Your registered email address (used to register on the HNG12 Slack workspace).
-2. The current datetime as an ISO 8601 formatted timestamp.
-3. The GitHub URL of the project's codebase.
+This is a public API that provides user details, including an email address, a GitHub URL, and a timestamp in ISO 8601 format. The API is designed to handle Cross-Origin Resource Sharing (CORS) appropriately, making it suitable for use with frontend applications.
 
 ---
 
-## Table of Content
+## Table of Contents
 
 1. [Project Description](#project-description)
-2. [Setup Instructions] (#setup-instructions)
-3. [API Documentation] (#api-documentation) -[Endpoint URL](#endpoint-url) -[Request Format](#request-format) -[Example Usage] (#example-usage)
+2. [Setup Instructions](#setup-instructions)
+3. [API Documentation](#api-documentation)
+   - [Endpoint URL](#endpoint-url)
+   - [Request/Response Format](#requestresponse-format)
+   - [Example Usage](#example-usage)
 
-## Project Dscription
+---
 
-This project is a FlaskAPI-based API serving the user details. It includes
--A root endpoint (`/`)returning a welcome message
--A `/api/info` endpoint returning the user details which include
--Email address.
--Github url.
--A Timestamp
--Proper CORS configuration allowing requests from specified origins.
+## Project Description
+
+This project is a Flask-based API serving user details. It includes the following features:
+
+- A root endpoint (`/`) that returns a welcome message.
+- A `/api/info` endpoint that returns user details, including:
+  - Email address.
+  - GitHub URL.
+  - A timestamp in ISO 8601 format.
+- Proper CORS configuration to allow requests from specified origins.
 
 ---
 
 ## Setup Instructions
 
-Follow these steps to run the proect locally.
+Follow these steps to set up and run the project locally.
 
 ### Prerequisites
 
--python3.7 or higher
-`pip` (Python package manager).
+- Python 3.7 or higher.
+- `pip` (Python package manager).
 
 ### Steps
 
-1.  **Clone the repository**:
+1. **Clone the repository**:
 
-    ```bash
-    git clone https://github.com/kevi799/hng12-api.git
-    cd your-repo-name
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+   ```
 
-    ```
+2. **Create a virtual environment** (optional):
 
-2.  **Install the required dependencies**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
 
-        ```bash
-          pip install flask flask cors jsonify gunicorn
+3. **Install Dependencies**:
 
-3.  **Create a virtual environment**
+   ```bash
+   pip install flask flask-cors
+   ```
 
-    ```bash
-    python -m venv venv
-    source venv/bin/activate
+4. **Run the application**:
+   ```bash
+   gunicorn app:app
+   ```
 
-    ```
+### API Documentation
 
-4.  \*\*Run the application:
+## Endpoint URL
 
-    ```bash
-    gunicorn app:app
-    ```
+- Base URL: `http://127.0.0.1:8000`
 
-### Api Documentation
+## Endpoints
 
-## EndPoint URL
+1. **Root Endpoint (`/`)**
 
-`http://127.0.0.1:8000 `.
+   - **Method**: `GET`
+   - **Description**: Returns a welcome message.
 
-## Endpoint
-
-1. Root Endpoint(`/`)
-   -Method `GET`
-   -Description ``Returns a welcome message`
-
-2. Get User details(`/api/info`)
-   -Method:`GET`
-   -Description: Returns user ino such as
-   -user email
-   -Github URL
-   -A Timestamp
+2. **Get User Details (`/api/info`)**
+   - **Method**: `GET`
+   - **Description**: Returns user details, including email, GitHub URL, and a timestamp in ISO 8601.
 
 ### Example Usage
 
-Using curl to Test the API
+Using `curl` to Test the API:
 
 1. Access the root endpoint:
+
+   ```bash
    curl -X GET http://127.0.0.1:8000/
+   ```
 
-_Response:_
+   **Response:**
 
-{
-"message": "Welcome"
-}
+   ```json
+   {
+     "message": "Welcome"
+   }
+   ```
 
-2. Access the /get-details endpoint:
+2. Access the `/api/info` endpoint:
+
+   ```bash
    curl -X GET http://127.0.0.1:8000/api/info
+   ```
 
-_Response:_
+   **Response:**
 
-{
-"email": "kelvinmulinge9702@gmail.com",
-"local-time": "2023-10-05T14:30:45Z",
-"github-url": "https://github.com"
-}
+   ```json
+   {
+     "email": "kelvinmulinge9702@gmail.com",
+     "local-time": "2023-10-05T14:30:45Z",
+     "github-url": "https://github.com"
+   }
+   ```
+
+### CORS Configuration
+
+The API is configured to allow requests from the following origins:
+
+- `http://localhost`
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-**Back link**
-https://hng-task-1-api.vercel.app/api/info
+## Backlink
+
+**[HNG Tech - Hire Python Developers]()**
