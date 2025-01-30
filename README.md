@@ -14,7 +14,7 @@ This is a public API that returns the following information:
 2. [Setup Instructions] (#setup-instructions)
 3. [API Documentation] (#api-documentation) -[Endpoint URL](#endpoint-url) -[Request Format](#request-format) -[Example Usage] (#example-usage)
 
-## Project Description
+## Project Dscription
 
 This project is a FlaskAPI-based API serving the user details. It includes
 -A root endpoint (`/`)returning a welcome message
