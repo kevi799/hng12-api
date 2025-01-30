@@ -17,7 +17,7 @@ required_details = {
     1: {
         "email": "kelvinmulinge9702@gmail.com",
         "current_datetime": "",
-        "github_url": "https://github.com/kevi799/"
+        "github_url": "https://github.com/kevi799/hng12-api"
     }
 }
 
