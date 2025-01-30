@@ -48,8 +48,7 @@ Follow these steps to run the proect locally.
 2.  **Install the required dependencies**
 
         ```bash
-
-    pip install flask flask cors jsonify gunicorn
+          pip install flask flask cors jsonify gunicorn
 
 3.  **Create a virtual environment**
 
@@ -112,6 +111,5 @@ _Response:_
 
 This project is licensed under the [MIT License](LICENSE).
 
-```
-
-```
+**Back link**
+https://hng-task-1-api.vercel.app/api/info
